@@ -1,0 +1,199 @@
+# AI Student Portfolio | Jared Walters
+
+A continuously updated student portfolio showcasing my projects, resume, certifications, and interests in supply chain, operations, and analytics.
+
+The portfolio includes an optional AI assistant that answers questions using the published portfolio content.
+
+## Features
+
+- **Resume:** Download my latest resume.
+- **Projects:** Explore projects, descriptions, tools, and repository links.
+- **Certifications:** View earned credentials and verification links.
+- **AI Assistant:** Ask questions about the portfolio.
+- **Automatic Updates:** GitHub Actions republishes the website whenever changes are pushed to the `main` branch.
+- **Responsive Design:** Supports desktop and mobile screens.
+
+## Technology
+
+- HTML, CSS, and JavaScript
+- Python
+- OpenAI API for optional LLM responses
+- GitHub Actions
+- GitHub Pages
+
+## Run Locally
+
+Requires Python 3.10 or newer.
+
+```bash
+python server.py
+```
+
+Open **http://localhost:8000** in your browser.
+
+No additional Python packages or API key are required for demo mode.
+
+## Enable AI Responses
+
+The assistant supports two modes:
+
+- **Demo mode:** Searches published portfolio content without an LLM.
+- **LLM mode:** Uses the OpenAI API to generate answers grounded in portfolio content.
+
+### macOS or Linux
+
+```bash
+export OPENAI_API_KEY="your-api-key"
+export OPENAI_MODEL="gpt-4o-mini"
+python server.py
+```
+
+### Windows PowerShell
+
+```powershell
+$env:OPENAI_API_KEY="your-api-key"
+$env:OPENAI_MODEL="gpt-4o-mini"
+python server.py
+```
+
+Use a model available to your account. API usage may incur charges.
+
+**Never commit your API key to GitHub.** Configure it as a server environment variable.
+
+## Update the Portfolio
+
+Edit `public/portfolio.json` to update:
+
+- Name, biography, and professional interests
+- GitHub and LinkedIn links
+- Projects and skills
+- Certifications
+- Resume download path
+- Last updated date
+
+### Add Your Resume
+
+1. Save your approved resume as `public/assets/resume.pdf`.
+2. Update the resume entry in `public/portfolio.json`:
+
+```json
+"resume": {
+  "file": "assets/resume.pdf",
+  "label": "Download resume (PDF)",
+  "status": "My current resume."
+}
+```
+
+The starter initially includes a clearly labeled Markdown resume template.
+
+### Add a Project
+
+Add an entry to the `projects` array:
+
+```json
+{
+  "title": "Your Project Title",
+  "category": "Analytics",
+  "status": "Completed",
+  "description": "Describe the problem, your approach, and verified results.",
+  "skills": ["Python", "Excel"],
+  "url": "https://github.com/YOUR-USERNAME/YOUR-PROJECT",
+  "featured": true
+}
+```
+
+### Add a Certification
+
+Add an entry to the `certifications` array:
+
+```json
+{
+  "title": "Certification Name",
+  "issuer": "Issuing Organization",
+  "date": "2026-10",
+  "status": "Earned",
+  "url": "https://your-verification-link.com"
+}
+```
+
+Replace placeholders with your actual information. Include only credentials you have earned.
+
+## Deploy with GitHub Pages
+
+1. Upload the project files to your GitHub repository.
+2. Keep `server.py`, `README.md`, `public/`, `tests/`, and `.github/` at the repository root.
+3. Open **Settings → Pages**.
+4. Choose **GitHub Actions** as the deployment source.
+5. Push changes to the `main` branch.
+
+The included workflow runs tests and publishes the contents of `public/`.
+
+Your website URL will normally be:
+
+```text
+https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/
+```
+
+Each push to `main` automatically updates the deployed portfolio.
+
+## Hosting the AI Assistant
+
+GitHub Pages hosts the frontend and supports the content-search demo.
+
+Live LLM responses require hosting `server.py` on a Python-compatible server with HTTPS and a securely configured API key. Add authentication or rate limits and spending controls before exposing the LLM endpoint publicly.
+
+## Project Structure
+
+```text
+student-ai-portfolio/
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   ├── app.js
+│   ├── portfolio.json
+│   └── assets/
+│       └── resume.md
+├── server.py
+├── tests/
+│   └── test_portfolio.py
+├── .github/
+│   └── workflows/
+│       └── pages.yml
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
+## Testing
+
+Run the Python tests:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+If Node.js is installed, check JavaScript syntax:
+
+```bash
+node --check public/app.js
+```
+
+## Limitations
+
+- This project integrates an existing LLM; it does not train a language model.
+- Demo mode uses content matching rather than AI generation.
+- AI answers may contain errors despite grounding instructions.
+- The assistant uses published portfolio JSON and does not read the downloadable resume file.
+- Chat is single-turn and does not store visitor conversation history.
+
+## Future Improvements
+
+- Add completed coursework and independent projects.
+- Publish additional verified certifications.
+- Replace the resume template with an updated PDF.
+- Add project screenshots and demonstrations.
+- Improve the assistant’s retrieval and citation capabilities.
+
+## About Me
+
+I am a student interested in supply chain, operations, and analytics. This portfolio documents my work and professional development as I continue learning and building.
