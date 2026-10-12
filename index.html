@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jared Walters | Portfolio</title>
+  <meta name="description" content="Portfolio of Jared Walters: supply chain management, operations, and analytics.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#about" id="brand">Jared Walters</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#about" data-tab="about">About</a></li>
+          <li><a href="#resume" data-tab="resume">Resume</a></li>
+          <li><a href="#projects" data-tab="projects">Projects</a></li>
+          <li><a href="#certifications" data-tab="certifications">Certifications</a></li>
+        </ul>
+      </nav>
+      <div id="nav-resume"></div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="container">
+    <noscript><p class="notice">This site needs JavaScript enabled to display its content.</p></noscript>
+    <p id="load-error" class="notice" role="alert" hidden></p>
+
+    <section id="about" class="panel" aria-labelledby="about-title">
+      <div class="about-grid">
+        <aside class="profile" aria-label="Profile">
+          <div id="photo-slot" class="photo-slot"></div>
+          <dl id="facts" class="facts"></dl>
+          <ul id="links" class="links"></ul>
+        </aside>
+        <div class="intro">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1 id="about-title">Jared Walters</h1>
+          <p id="tagline" class="tagline"></p>
+          <div id="intro-text"></div>
+          <ul id="interests" class="chips" aria-label="Interests"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="panel" aria-labelledby="resume-title" hidden>
+      <h2 id="resume-title">Resume</h2>
+      <p id="resume-summary"></p>
+      <div id="resume-action"></div>
+    </section>
+
+    <section id="projects" class="panel" aria-labelledby="projects-title" hidden>
+      <h2 id="projects-title">Projects</h2>
+      <div id="filters" class="filters" role="group" aria-label="Filter projects by category"></div>
+      <p id="project-status" class="sr-only" aria-live="polite"></p>
+      <div id="project-grid" class="grid"></div>
+    </section>
+
+    <section id="certifications" class="panel" aria-labelledby="certs-title" hidden>
+      <h2 id="certs-title">Certifications</h2>
+      <div id="cert-list" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p id="footer-text"></p></div>
+  </footer>
+</body>
+</html>
