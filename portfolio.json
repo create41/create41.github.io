@@ -1,0 +1,64 @@
+{
+  "_help": "Edit this file to update the site. Values marked PLACEHOLDER are not real. Replace them, then commit and push to main.",
+  "profile": {
+    "name": "Jared Walters",
+    "tagline": "Student focused on supply chain management, operations, and analytics",
+    "intro": [
+      "Hi, I'm Jared Walters. I'm interested in how goods, information, and decisions move through a supply chain, and how better operations create value.",
+      "My interests center on supply chain management, operations, and analytics. I enjoy using data to understand processes and find ways to improve them."
+    ],
+    "interests": ["Supply Chain Management", "Operations", "Analytics"],
+    "photo": "JW - Headshot.png",
+    "photoAlt": "Portrait of Jared Walters",
+    "university": "[PLACEHOLDER: University]",
+    "major": "[PLACEHOLDER: Major]",
+    "graduationYear": "[PLACEHOLDER: Graduation year]",
+    "email": "",
+    "linkedin": "",
+    "github": "https://github.com/jmarwalters"
+  },
+  "resume": {
+    "file": "assets/resume.pdf",
+    "summary": "Download my resume for education, experience, and skills."
+  },
+  "projectCategories": ["Supply Chain", "Operations", "Analytics"],
+  "projects": [
+    {
+      "placeholder": true,
+      "title": "Sample Project Title",
+      "description": "PLACEHOLDER: This is sample content showing how a project card looks. It is not a real project. Replace it with your own work.",
+      "category": "Analytics",
+      "tools": ["Tool 1", "Tool 2"],
+      "status": "Placeholder",
+      "image": "",
+      "imageAlt": "",
+      "github": "",
+      "report": ""
+    },
+    {
+      "placeholder": true,
+      "title": "Sample Supply Chain Project",
+      "description": "PLACEHOLDER: Sample card for a supply chain project. Not a real project and no results are implied.",
+      "category": "Supply Chain",
+      "tools": ["Tool 1"],
+      "status": "Placeholder",
+      "image": "",
+      "imageAlt": "",
+      "github": "",
+      "report": ""
+    },
+    {
+      "placeholder": true,
+      "title": "Sample Operations Project",
+      "description": "PLACEHOLDER: Sample card for an operations project. Not a real project.",
+      "category": "Operations",
+      "tools": ["Tool 1"],
+      "status": "Placeholder",
+      "image": "",
+      "imageAlt": "",
+      "github": "",
+      "report": ""
+    }
+  ],
+  "certifications": []
+}
